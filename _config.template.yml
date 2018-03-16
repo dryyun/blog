@@ -106,3 +106,11 @@ feed:
   content:
   content_limit: 140
   content_limit_delim: ' '
+
+# hexo-admin authentification
+# admin:
+#   username: 
+#   password_hash: 
+#   secret: 
+#   deployCommand: './hexo-deploy'
+
