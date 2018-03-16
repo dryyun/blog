@@ -7,3 +7,4 @@ public/
 .deploy*/
 /_config.yml
 /_admin-config.yml
+.idea
