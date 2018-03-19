@@ -114,3 +114,6 @@ feed:
 #   secret: 
 #   deployCommand: './hexo-deploy'
 
+sitemap:
+    path: sitemap.xml
+    template: ./sitemap_template.xml

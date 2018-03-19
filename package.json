@@ -19,6 +19,7 @@
   "devDependencies": {
     "hexo-admin": "^2.3.0",
     "hexo-generator-feed": "^1.2.2",
-    "hexo-generator-json-content": "^3.0.1"
+    "hexo-generator-json-content": "^3.0.1",
+    "hexo-generator-sitemap": "^1.2.0"
   }
 }
