@@ -18,6 +18,8 @@ tags:
 
 其实 Shadowsocks 客户端和服务端是一起安装的，Shadowsocks 有很多实现的版本，最有名的 Python 实现的版本了吧，网上的很多教程都是安装这个版本的，不过这里我要使用 [C 语言版本的 Shadowsocks](https://github.com/shadowsocks/shadowsocks-libev)
 
+<!-- more --> 
+
 ### 服务器配置
 
 配置 1核 2GB   
