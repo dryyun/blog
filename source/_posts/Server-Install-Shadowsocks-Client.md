@@ -46,4 +46,82 @@ $ ss-local -h
 
 ### 配置客户端
 
+```bash
+$ cd ~
+$ mkdir ss
+$ cd ss
+$ vim ss-local.json
+```
+
+写入内容
+```
+{
+  "server":"my_server_ip",
+  "server_port":my_server_port,
+  "local_address": "127.0.0.1",
+  "local_port":1080,
+  "password":"my_password",
+  "timeout":300,
+  "method":"aes-256-cfb"
+}
+```
+
+| Name | 说明 |
+|:----------|:------|
+|server | ss 服务器的 ip | 
+|server_port| ss 服务器的 port|
+|local_address|本地地址|
+|local_port|本地端口，一般1080|
+|password|密码，ss 服务器的密码|
+|timeout|超时重连|
+|method| 连接 ss 服务器的方法|
+
+### 启动 Shadowsocks 客户端
+
+`ss-local -c /root/ss/ss-local.json`
+
+默认是前台启动，可以改成后台启动，或者通过一些守护进程的工具运行。
+
+## 使用 Privoxy 代理 
+
+安装好了 Shadowsocks，但是它是 socks5 代理，而不是 http/https 的代理，在 shell 运行命令时，需要通过 Privoxy 代理
+
+### 安装 Privoxy
+
+```bash
+$ yum install privoxy -y
+$ privoxy --version
+```
+> 配置文件在 /etc/privoxy/config 
+> 先搜索关键字 `listen-address` 找到 `listen-address 127.0.0.1:8118` 这一句，保证这一句没有注释，`8118` 就是将来 http 代理要输入的端口。
+  然后搜索 `forward-socks5t`, 将 `#forward-socks5t / 127.0.0.1:9050` . 此句前面的注释去掉, 意思是转发流量到本地的 9050 端口, 而 9050 端口正是 ss-local 需要监听的 local_port
+  
+
+### 配置转发
+
+> 我不想把 privoxy 设置为一个服务运行，而是设置成当需要代理的时候，才运行，方便切换
+
+`vim ~/.bashrc`
+写入
+```
+alias proxy='systemctl start privoxy && export http_proxy=http://127.0.0.1:8118 && export https_proxy=http://127.0.0.1:8118'   
+alias unproxy='unset http_proxy && unset https_proxy && systemctl stop privoxy'
+
+```
+
+运行 proxy 的时候，开启代理，运行 `curl ip.cn`，`curl https://www.google.com` 可以进行测试   
+运行 unproxy ，取消代理   
+
+## 总结
+
+`ss-local` 和 `proxy` 服务需要配合使用，才能友好使用，我设置 `ss-local` 后台运行，`proxy` 需要时才运行。
+
+
+> 参考链接
+> [https://docs.lvrui.io/2016/12/12/Linux%E4%B8%AD%E4%BD%BF%E7%94%A8ShadowSocks-Privoxy%E4%BB%A3%E7%90%86/](https://docs.lvrui.io/2016/12/12/Linux%E4%B8%AD%E4%BD%BF%E7%94%A8ShadowSocks-Privoxy%E4%BB%A3%E7%90%86/ )
+
+
+
+
+
 
