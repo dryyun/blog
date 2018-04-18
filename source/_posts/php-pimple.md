@@ -5,6 +5,7 @@ tags:
 - PHP
 - Pimple
 - Dependency Injection
+- 依赖注入
 ---
 
 > 链接  
