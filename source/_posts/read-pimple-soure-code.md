@@ -1,5 +1,5 @@
 ---
-title: 读 PHP - Pimple 源码笔记
+title: 读 PHP - Pimple 源码笔记（上）
 date: 2018-04-18 14:36:40
 tags:
 - php
@@ -40,6 +40,8 @@ ArrayAccess {
     abstract public void offsetUnset ( mixed $offset )
 }
 ```
+
+<!-- more --> 
 
 伪代码如下
 ```php
@@ -98,6 +100,25 @@ SplObjectStorage 实现了 [Countable](http://php.net/manual/zh/class.countable.
 
 [__invoke()](http://php.net/manual/zh/language.oop5.magic.php#object.invoke) 当尝试以调用函数的方式调用一个对象时，__invoke() 方法会被自动调用。
 
+看一个例子吧，一目了然。
+```php
+<?php
+class CallableClass 
+{
+    function __invoke($x) {
+        var_dump($x);
+    }
+}
+$obj = new CallableClass;
+$obj(5);
+var_dump(is_callable($obj));
+
+//output 
+
+//int(5)
+//bool(true)
+
+```
 
 ## 读源码
 
@@ -133,12 +154,16 @@ PS， Markdown 写目录格式真是麻烦，后来找了一个工具 [tree](htt
 ```php
 class Container implements \ArrayAccess
 {
-    private $values = array();
-    private $factories;
-    private $protected;
-    private $frozen = array();
-    private $raw = array();
-    private $keys = array();
+    private $values = array(); // 存储 value 的数组
+    private $factories; // 存储工厂方法的对象，是 SplObjectStorage 的实例
+    private $protected; // 存储保护方法的对象，是 SplObjectStorage 的实例
+    
+    // 存储被冻结的服务，新设置一个 service 的时候，可以在还没有调用这个 service 的时候，覆盖原先设置，这时不算冻结
+    // 一旦调用了这个 service 之后，就会存入 $frozen 数组，如果这时还想重新覆盖这个 service 会报错，判断逻辑在 offsetSet 实现。
+    private $frozen = array(); 
+    
+    private $raw = array(); // 存储 service 原始设置内容，用于 ::raw() 方法读取 
+    private $keys = array(); // 存储 key
     
     public function __construct(array $values = array())
     {
@@ -162,7 +187,86 @@ class Container implements \ArrayAccess
     public function register(ServiceProviderInterface $provider, array $values = array()){}
 }
 ```
-实现了 ArrayAccess 接口，这就可以理解为什么可以通过数组的方式定义服务了。
+
+Container 实现了 ArrayAccess 接口，这就可以理解为什么可以通过数组的方式定义服务了。
+
+#### 重要的 function 分析
+
+1、offsetSet、offsetExists、offsetUnset 主要实现 ArrayAccess 的接口很容易看懂
+2、factory、protect 主要逻辑是判断传入的 $callable 是否有 __invoke ，如果有的话，通过 SplObjectStorage::attach，存储 object 中
+3、raw 获取设置的原始内容
+4、key 获取所有的 key
+5、register() 注册一些通用的 service
+
+6、offsetGet()
+
+```php
+    public function offsetGet($id)
+    {
+        if (!isset($this->keys[$id])) {    // 如果没有设置过，报错
+            throw new UnknownIdentifierException($id);
+        }
+        
+        if (
+            isset($this->raw[$id])  // raw 里已经有值，一般来说就是之前已经获取过一次实例，再次获取的时候，就返回相同的值
+            || !\is_object($this->values[$id]) // 对应的 value 不是 object ，而是一个普通的值
+            || isset($this->protected[$this->values[$id]]) // 存在于 protected 中
+            || !\method_exists($this->values[$id], '__invoke') // 对应的 value 不是闭包
+        ) {
+            return $this->values[$id]; // 返回 values 数组里的值
+        }
+
+        if (isset($this->factories[$this->values[$id]])) { // 如果工厂方法里面设置了相关方法
+            return $this->values[$id]($this); // 直接调用这个方法，传入参数($this)，也就是匿名函数中可以访问当前实例的其他服务
+        }
+
+        $raw = $this->values[$id];
+        $val = $this->values[$id] = $raw($this); // 初始化一般的 service ，传入($this) ，以后再调用都获取相同的实例
+        $this->raw[$id] = $raw; // 把原始内容存入 raw 数组
+
+        $this->frozen[$id] = true; // 在初始化之后冻结这个 key ，不能被覆盖
+
+        return $val;
+    }
+```
+
+7、extend()
+
+扩展一个 service，如果已经被冻结了，也不能被扩展。
+与上文说的直接覆盖还是有区别的，直接覆盖就是完全不管之前定义的 service ，使用 extend 是可以在原始定义上做出修改
+
+```php
+    public function extend($id, $callable)
+    {
+        // ... 一些判断逻辑省略
+        
+        // 如果是 protected 的 service 还不被支持 extend 
+        if (isset($this->protected[$this->values[$id]])) {
+            @\trigger_error(\sprintf('How Pimple behaves when extending protected closures will be fixed in Pimple 4. Are you sure "%s" should be protected?', $id), \E_USER_DEPRECATED);
+        }
+
+        if (!\is_object($callable) || !\method_exists($callable, '__invoke')) {
+            throw new ExpectedInvokableException('Extension service definition is not a Closure or invokable object.');
+        }
+
+        $factory = $this->values[$id];
+
+        // 主要是这两行代码
+        $extended = function ($c) use ($callable, $factory) {
+            return $callable($factory($c), $c);
+        };
+
+        if (isset($this->factories[$factory])) {
+            $this->factories->detach($factory);
+            $this->factories->attach($extended);
+        }
+
+        return $this[$id] = $extended;
+    }
+```
+
+## 未完待续。
+还有一篇，主要关于 PSR11 兼容性的。
 
 
 
