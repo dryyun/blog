@@ -1,1 +1,1 @@
-git pull && hexo generate
+git pull && hexo generate && hexo deploy
