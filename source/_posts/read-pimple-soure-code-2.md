@@ -30,6 +30,8 @@ interface ContainerInterface
 ```
 只需要实现这个两个接口就行。
 
+<!-- more --> 
+
 ## Pimple - PSR-11 兼容性
 
 Pimple 的作者自己也说了，由于历史原因，没有实现 PSR-11，但是提供了辅助类 。
