@@ -1,6 +1,6 @@
 ---
 title: FastRoute - 快速请求路由
-date: 2018-04-20 10:14:21
+date: 2018-04-21 10:14:21
 tags:
 - PHP
 - Route
@@ -259,5 +259,5 @@ HTTP 规范要求服务器 [同时支持 GET 和 HEAD 方法](https://www.w3.org
 > 原创文章，欢迎转载。转载请注明出处，谢谢。
 > 原文链接地址：http://dryyun.com/2018/04/20/php-FastRoute/
 > 作者: [dryyun](https://dryyun.com/)  
-> 发表日期: 2018-04-20 10:14:21
+> 发表日期: 2018-04-21 10:14:21
 >
