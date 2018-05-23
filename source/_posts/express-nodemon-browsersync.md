@@ -17,6 +17,8 @@ tags:
 
 踩坑说明，我使用了 swig 模板引擎，虽然这已经是一个不维护的库了，但是谁让我比较熟悉 twig 呢，还是 swig 比较合适我，但是 swig 默认是缓存模板结果的，所以使用之后会发现刷新了浏览器但是没有修改没有生效。因为是先运行刷新浏览器，然后再运行 nodemon ，这在时间上会有前后顺序的差异，可以具体我代码中定义了 `bs-delay`。其实在开发环境设置 swig cache = false 就可以咯。
 
+gulpfile.js 代码详细
+<!-- more --> 
 ```javascript
 const gulp = require('gulp');
 const nodemon = require('gulp-nodemon');
@@ -74,7 +76,7 @@ gulp.task('nodemon', function (cb) {
 
 >
 > 原创文章，欢迎转载。转载请注明出处，谢谢。
-> 原文链接地址：http://dryyun.com/express-nodemon-browsersync
+> 原文链接地址：https://dryyun.com/2018/05/22/express-nodemon-browsersync/
 > 作者: [dryyun](https://dryyun.com/)  
 > 发表日期: 2018-05-22 21:56:43
 >
