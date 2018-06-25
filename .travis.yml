@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- '8'
+notifications:
+  email: false
+branch:
+  only:
+   - master
+before_install:
+- openssl aes-256-cbc -K $encrypted_9603b741efa5_key -iv $encrypted_9603b741efa5_iv
+  -in ./id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+install: true
+script:
+- echo $known_hosts >> ~/.ssh/known_hosts
+- ssh root@$ip -p $port -i ~/.ssh/id_rsa " cd ~/blog && sh hexo-deploy "
+
