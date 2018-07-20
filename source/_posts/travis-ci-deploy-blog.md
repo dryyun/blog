@@ -22,6 +22,8 @@ Travis CI，只支持 Github，不支持其他代码托管服务，分为[免费
 
 看完之后还不懂，就看看文档。
 
+<!-- more --> 
+
 ### 命令行工具
 
 有配套的命令行工具 [Travis CI Client](https://github.com/travis-ci/travis.rb/) ，功能还是蛮多的，不过是 ruby 写的，要使用 `gem install travis` 安装 。
@@ -46,7 +48,6 @@ Travis CI，只支持 Github，不支持其他代码托管服务，分为[免费
 
 使用 `travis encrypt-file` 可以加密文件，这本身是一个安全措施，但是如果要加密多文件，就变的比较麻烦，虽然也给出了[解决方法](https://docs.travis-ci.com/user/encrypting-files/#Encrypting-multiple-files)，但是不好用。
 
-<!-- more --> 
 
 ## Travis CI 踩坑记录
 
