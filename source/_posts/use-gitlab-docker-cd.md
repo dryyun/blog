@@ -13,8 +13,8 @@ tags:
 
 ## 参考内容
 - [用 GitLab CI 进行持续集成](https://segmentfault.com/a/1190000006120164)
-- [开始使用GitLab CI/CD](https://segmentfault.com/a/1190000012989919)
-- [使用Gitlab CI & Docker搭建CI环境](http://walterinsh.github.io/2016/04/18/using-gitlab-ci.html)
+- [开始使用 GitLab CI/CD](https://segmentfault.com/a/1190000012989919)
+- [使用 Gitlab CI & Docker 搭建 CI 环境](http://walterinsh.github.io/2016/04/18/using-gitlab-ci.html)
 
 看完之后，在结合文档看看就差不多会了。
 
@@ -32,6 +32,10 @@ deploy:
   script:
   - ssh machine " cd ~/blog && sh hexo-deploy "
 ```
+
+## 小问题
+
+如果是使用 [docker - gitlab-runner](https://hub.docker.com/r/gitlab/gitlab-runner/~/dockerfile/) 的话，默认的执行用户是 `gitlab-runner`，可以通过设置参数 `--user=root` 更改执行用户。  
 
 ## 结论
 公司部署用上了 GitLab + GitLab CI 还是很方便的。  
