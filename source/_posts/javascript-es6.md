@@ -18,7 +18,7 @@ tags:
 <!-- more --> 
 
 - 首推 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)，有什么问题查文档是最好的。MDN 有个好的地方是有中文翻译版，对英文不是很熟悉的朋友可以直接查看，方便入门，当然啦中文的翻译有可能不是很及时，最好的话还是直接查看英文版。 MDN 可不是仅限于 ES6 哦，`HTML`，`CSS`，`JavaScript` 等等都可以查到
-- 《 深入理解ES6 》，[英文版](https://leanpub.com/understandinges6/read) 免费在线阅读，中文版可能就要买书了吧 - [GitHub 传送](https://github.com/lenville/understandinges6-suspension)，网上也有[开源的翻译版](https://github.com/OshotOkill/understandinges6-simplified-chinese) 
+- 《 深入理解ES6 》，[英文版](https://leanpub.com/understandinges6/read) 免费在线阅读，中文版可能就要买书了吧 - [GitHub 传送](https://github.com/lenville/understandinges6-suspension)，网上也有 [开源的翻译版](https://github.com/OshotOkill/understandinges6-simplified-chinese) 
 - [《 ES6 标准入门 》](http://es6.ruanyifeng.com/)
 - 实战ES2015
 
