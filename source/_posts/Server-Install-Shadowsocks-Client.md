@@ -70,7 +70,7 @@ $ vim ss-local.json
 
 | Name | 说明 |
 |:----------|:------|
-|server | ss 服务器的 ip | 
+|server | ss 服务器的 ip |
 |server_port| ss 服务器的 port|
 |local_address|本地地址|
 |local_port|本地端口，一般1080|
@@ -97,7 +97,7 @@ $ privoxy --version
 > 配置文件在 /etc/privoxy/config 
 > 先搜索关键字 `listen-address` 找到 `listen-address 127.0.0.1:8118` 这一句，保证这一句没有注释，`8118` 就是将来 http 代理要输入的端口。
   然后搜索 `forward-socks5t`, 将 `#forward-socks5t / 127.0.0.1:9050` . 此句前面的注释去掉, 意思是转发流量到本地的 9050 端口, 而 9050 端口正是 ss-local 需要监听的 local_port
-  
+
 
 ### 配置转发
 
@@ -120,7 +120,11 @@ alias unproxy='unset http_proxy && unset https_proxy && systemctl stop privoxy'
 
 
 > 参考链接
-> [https://docs.lvrui.io/2016/12/12/Linux%E4%B8%AD%E4%BD%BF%E7%94%A8ShadowSocks-Privoxy%E4%BB%A3%E7%90%86/](https://docs.lvrui.io/2016/12/12/Linux%E4%B8%AD%E4%BD%BF%E7%94%A8ShadowSocks-Privoxy%E4%BB%A3%E7%90%86/ )
+> [Linux中使用ShadowSocks+Privoxy代理](https://docs.lvrui.io/2016/12/12/Linux%E4%B8%AD%E4%BD%BF%E7%94%A8ShadowSocks-Privoxy%E4%BB%A3%E7%90%86/ )
+> [ss-local 全局代理](https://www.zfl9.com/ss-local.html)
+> [sslocal + privoxy 实现 PAC 代理](https://blog.sliang.xyz/2017/12/12/sslocalprivoxy-%E5%AE%9E%E7%8E%B0-pac-%E4%BB%A3%E7%90%86/)
+> [ss-redir透明代理](https://www.bjwf125.com/?p=9)
+> 
 
 
 >
