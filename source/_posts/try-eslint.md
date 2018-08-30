@@ -12,6 +12,8 @@ tags:
     - Git
     - SVN 
     - xxx...
+<!-- more --> 
+    
 - 项目管理
     - Redmine 
     - JIRA
