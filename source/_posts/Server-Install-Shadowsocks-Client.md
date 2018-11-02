@@ -1,6 +1,8 @@
 ---
 title: 服务器安装 Shadowsocks 客户端，代理，实现无障碍访问
 date: 2018-03-22 14:50:20
+categories:
+- 技术
 tags:
 - Centos
 - Shadowsocks

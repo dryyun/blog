@@ -1,6 +1,8 @@
 ---
 title: Express 使用 nodemon 、gulp、 browser-sync 实现自动刷新
 date: 2018-05-22 21:56:43
+categories:
+- 技术
 tags:
 - express
 - nodemon

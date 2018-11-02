@@ -1,6 +1,8 @@
 ---
 title: 使用 GitLab + Docker 实现 CD 持续部署 
 date: 2018-07-22 16:36:47
+categories:
+- 技术
 tags:
 - GitLab
 - Docker

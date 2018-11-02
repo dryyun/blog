@@ -1,6 +1,8 @@
 ---
 title: 群晖 Nas 折腾 https - 更安全的外网访问
 date: 2018-07-19 15:04:02
+categories:
+- 技术
 tags:
 - https
 - Nas

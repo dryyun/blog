@@ -1,6 +1,8 @@
 ---
 title: 消息提醒 - 微信公众号开发
 date: 2018-06-01 16:08:01
+categories:
+- 技术
 tags:
 - express
 - weixin

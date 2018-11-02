@@ -1,6 +1,8 @@
 ---
 title: 使用 ESLint - 工程化开发项目概览  
 date: 2018-08-29 17:49:50
+categories:
+- 技术
 tags:
 - JavaScript
 - ESLint

@@ -1,6 +1,8 @@
 ---
 title: 使用 Travis CI 部署博客 - 踩坑记录
 date: 2018-06-25 15:03:32
+categories:
+- 技术
 tags:
 - Travis CI
 ---

@@ -1,6 +1,8 @@
 ---
 title: 群晖 Nas 用上 VPN 更加安全
 date: 2018-07-19 19:47:11
+categories:
+- 技术
 tags:
 - vpn
 - Nas

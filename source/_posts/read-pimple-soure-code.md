@@ -1,6 +1,8 @@
 ---
 title: 读 PHP - Pimple 源码笔记（上）
 date: 2018-04-18 14:36:40
+categories:
+- 技术
 tags:
 - php
 - pimple

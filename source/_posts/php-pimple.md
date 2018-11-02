@@ -1,6 +1,8 @@
 ---
 title: Pimple - 一个简单的 PHP 依赖注入容器
 date: 2018-04-17 14:30:29
+categories:
+- 技术
 tags:
 - PHP
 - Pimple

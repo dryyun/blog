@@ -1,6 +1,8 @@
 ---
 title: 《 深入理解ES6 》- 读完
 date: 2018-07-30 15:53:11
+categories:
+- 技术
 tags:
 - JavaScript
 - ES6

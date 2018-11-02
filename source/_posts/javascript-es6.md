@@ -1,6 +1,8 @@
 ---
 title: JavaScript - ES6 概要学习
 date: 2018-06-15 12:55:50
+categories:
+- 技术
 tags:
 - JavaScript
 - ES6

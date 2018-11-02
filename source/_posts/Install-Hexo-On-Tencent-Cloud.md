@@ -1,6 +1,8 @@
 ---
 title: 使用 Hexo 搭建博客记录，部署腾讯云
 date: 2018-03-16 15:28:54
+categories:
+- 技术
 tags:
 - Hexo
 - 腾讯云

@@ -1,6 +1,8 @@
 ---
 title: 算法笔记 - 未入门
 date: 2018-08-24 17:10:32
+categories:
+- 技术
 tags:
 - algorithms
 - 算法
