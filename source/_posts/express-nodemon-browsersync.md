@@ -73,10 +73,3 @@ gulp.task('nodemon', function (cb) {
 });
 ```
 
-
->
-> 原创文章，欢迎转载。转载请注明出处，谢谢。
-> 原文链接地址：https://dryyun.com/2018/05/22/express-nodemon-browsersync/
-> 作者: [dryyun](https://dryyun.com/)  
-> 发表日期: 2018-05-22 21:56:43
->

@@ -34,12 +34,3 @@ tags:
 美好的期望是，看完了 ES6，在了解一下 TypeScript，然后把 [mp](https://github.com/dryyun/mp) 项目重构了吧。 
 加油，共勉。  
 
-
-
-
->
-> 原创文章，欢迎转载。转载请注明出处，谢谢。
-> 原文链接地址：http://dryyun.com/2018/06/15/javascript-es6/
-> 作者: [dryyun](https://dryyun.com/)  
-> 发表日期: 2018-06-15 12:55:50
->

@@ -83,10 +83,3 @@ final class Container implements ContainerInterface
 Pimple 的确是一个简单的依赖注入容器，代码很容易看懂，对于学习入门来说很好，比 Laravel 的 DI 好懂多了。
 
 
-
->
-> 原创文章，欢迎转载。转载请注明出处，谢谢。
-> 原文链接地址：http://dryyun.com/2018/04/19/read-pimple-soure-code-2/
-> 作者: [dryyun](https://dryyun.com/)  
-> 发表日期: 2018-04-19 16:03:02
->

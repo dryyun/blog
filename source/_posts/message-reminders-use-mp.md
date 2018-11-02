@@ -29,10 +29,3 @@ tags:
 
 六一儿童节快乐 ~ 
 
-
->
-> 原创文章，欢迎转载。转载请注明出处，谢谢。
-> 原文链接地址：http://dryyun.com/2018/06/01/message-reminders-use-mp/
-> 作者: [dryyun](https://dryyun.com/)  
-> 发表日期: 2018-06-01 16:08:01
->

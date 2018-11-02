@@ -127,11 +127,3 @@ alias unproxy='unset http_proxy && unset https_proxy && systemctl stop privoxy'
 > 
 
 
->
-> 原创文章，欢迎转载。转载请注明出处，谢谢。
-> 原文链接地址：https://dryyun.com/2018/03/22/Server-Install-Shadowsocks-Client/
-> 作者: [dryyun](https://dryyun.com/)  
-> 发表日期: 2018-03-22 14:50:20
->
->
-

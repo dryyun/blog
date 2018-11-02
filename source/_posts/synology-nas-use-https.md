@@ -144,9 +144,3 @@ https 默认是 443 端口，如果能直接使用 443 端口的话，就可以�
 > 2、https://www.appinn.com/ds218plus-https/
 > 3、http://www.up4dev.com/2018/05/29/synology-ssl-wildcard-cert-update/
 
->
-> 原创文章，欢迎转载。转载请注明出处，谢谢。
-> 原文链接地址：http://dryyun.com/2018/07/19/synology-nas-use-https/
-> 作者: [dryyun](https://dryyun.com/)  
-> 发表日期: 2018-07-19 15:04:02
->

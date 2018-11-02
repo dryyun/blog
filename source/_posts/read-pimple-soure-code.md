@@ -268,11 +268,3 @@ Container 实现了 ArrayAccess 接口，这就可以理解为什么可以通过
 ## 未完待续。
 还有一篇，主要关于 PSR11 兼容性的。
 
-
-
->
-> 原创文章，欢迎转载。转载请注明出处，谢谢。
-> 原文链接地址：http://dryyun.com/2018/04/18/read-pimple-soure-code/
-> 作者: [dryyun](https://dryyun.com/)  
-> 发表日期: 2018-04-18 14:36:40
->

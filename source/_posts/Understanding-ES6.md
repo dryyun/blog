@@ -28,10 +28,3 @@ tags:
 慢慢学吧。
 
 
-
->
-> 原创文章，欢迎转载。转载请注明出处，谢谢。
-> 原文链接地址：http://dryyun.com/2018/07/30/Understanding-ES6/
-> 作者: [dryyun](https://dryyun.com/)  
-> 发表日期: 2018-07-30 15:53:11
->

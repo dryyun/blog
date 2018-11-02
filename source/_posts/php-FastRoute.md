@@ -257,9 +257,3 @@ HTTP 规范要求服务器 [同时支持 GET 和 HEAD 方法](https://www.w3.org
 
 文档还是很好理解，下次就要看源码了。
 
->
-> 原创文章，欢迎转载。转载请注明出处，谢谢。
-> 原文链接地址：http://dryyun.com/2018/04/20/php-FastRoute/
-> 作者: [dryyun](https://dryyun.com/)  
-> 发表日期: 2018-04-21 10:14:21
->

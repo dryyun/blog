@@ -257,9 +257,3 @@ $container['auth'] = function ($c) {
 
 Pimple 是由 Symfony 框架的创建者 Fabien Potencier 写的 ，Pimple 是在 MIT 协议下发布的。
 
->
-> 原创文章，欢迎转载。转载请注明出处，谢谢。
-> 原文链接地址：http://dryyun.com/2018/04/17/php-pimple
-> 作者: [dryyun](https://dryyun.com/)  
-> 发表日期: 2018-04-17 14:30:29
->
