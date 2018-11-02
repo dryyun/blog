@@ -52,12 +52,17 @@
         {% endif %}
       {% else %}
         {{ post.content }}
+
+        {# Post Copyright #}
+        {% include "../_partial/_post/copyright.swig" %}
       {% endif %}
+
     </div>
+
 
     {% if not is_home() %}
       {# Post Copyright #}
-      {% include "../_partial/_post/copyright.swig" %}
+      {# {% include "../_partial/_post/copyright.swig" %} #}
 
       {# Reward #}
       {% include "../_partial/_post/reward.swig" %}
