@@ -53,7 +53,7 @@ index_generator:
   order_by: -date
 
 archive_generator:
-  per_page: 0 ##归档页面默认20篇文章标题，如果值为0不分页
+  per_page: 30 ##归档页面默认20篇文章标题，如果值为0不分页
   yearly: true ##生成年视图
   monthly: true ##生成月视图
   daily: false
@@ -61,6 +61,8 @@ archive_generator:
 
   
 # Category & Tag
+category_generator:
+  per_page: 30
 default_category: uncategorized
 category_map:
 tag_map:
