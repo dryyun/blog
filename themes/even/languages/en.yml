@@ -23,6 +23,7 @@ copyright:
   link: 'Link'
   license: 'License'
   date: 'Date'
+  modify_date: 'Modify Date'
 
 counter:
   archives:
