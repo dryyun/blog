@@ -1,7 +1,7 @@
 ---
 title: GVM - Go 的多版本管理工具，使用介绍
 categories:
-  - 技术
+  - Go 
 tags:
   - Go
 date: 2018-11-28 09:58:17
