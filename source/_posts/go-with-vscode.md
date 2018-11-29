@@ -7,12 +7,15 @@ tags:
   - Go
   - VSCode
 ---
+> Go 分类文章，会不定时修改，补充，纠错，增加内容，路漫漫。
+
 开发 Go 如果懒的折腾就直接上 [GoLand](https://www.jetbrains.com/go/) 就行了，我就是懒。
 
 不过，这不是本文的目的，毕竟 GoLand 要钱，要内存，要机器性能，要求还蛮高的，相对来说 [VSCode](https://code.visualstudio.com/) 就简单了呀。
 
 ## 使用
 默认你已经安装了 VSCode 了
+`强烈建议，安装命令 [code]，在终端打开文件很方便` ， [参考](https://segmentfault.com/q/1010000005104983)
 
 ### 安装 Go 插件
 
