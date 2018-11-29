@@ -22,6 +22,7 @@ tags:
 
 <img src="/go-extension.png" width="500px" >
 
+<!-- more --> 
 
 ### 安装依赖工具
 
