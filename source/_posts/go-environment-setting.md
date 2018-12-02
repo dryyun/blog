@@ -87,5 +87,8 @@ tags:
      ' > hello.go
      ```
 > `$ go run hello.go`  
-     
+
+可以看出 Go 原生支持 Unicode，可以处理全世界任何语言的文本。      
+
+
 
