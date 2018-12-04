@@ -12,7 +12,7 @@ date: 2018-12-04 11:01:48
 
 使用了 [SF - Notes](https://segmentfault.com/notes)
 
-这里权当列表展示，我也复习一下
+这里权当列表展示，最近也翻出来复习一下，查漏补缺。
 
 - [《The Go Programming Language》 Ch2 - 程序结构](https://segmentfault.com/n/1330000009462604)
 - [《The Go Programming Language》 Ch3 - 基础数据类型](https://segmentfault.com/n/1330000009472036)
