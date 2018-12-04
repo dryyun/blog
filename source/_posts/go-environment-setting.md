@@ -47,7 +47,7 @@ tags:
     - 需要把 GOBIN 路径加入 PATH 路径里，才能调用生成的命令文件    
 
 ## GOPATH 目录设置
-- src，源码文件目录
+- src，源码文件目录，就是开发程序的目录，新建一个文件夹就代表开发一个项目
 - pkg，编译后的文件目录，一般是非 main 包生成的 .a 文件
 - bin，可执行文件目录，一般也就是 GOBIN 的路径
 
@@ -66,6 +66,8 @@ tags:
 - go get    
     - 获取远程包，并且 install
     - 分为两步，1、现在源码到 GOPATH/src 目录，2、go install 安装
+- go test
+    - 会默认读取目录下 *_test.go 的文件，运行测试 
 - go env，查看环境配置
 - go version，查看 Go 版本    
 
