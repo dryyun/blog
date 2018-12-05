@@ -4,7 +4,7 @@ categories:
   - Go
 tags:
   - Go
-date: 2018-12-04 11:01:48
+date: 2018-12-05 13:01:48
 ---
 > Go 分类文章，学习笔记，会不定时修改，补充，纠错，增加内容，路漫漫。
 
@@ -23,4 +23,4 @@ date: 2018-12-04 11:01:48
 - [《The Go Programming Language》 Ch7 - 接口 - 涉及接口记录](https://segmentfault.com/n/1330000009667150)
 - [《The Go Programming Language》 Ch8 - Goroutines 和 Channels](https://segmentfault.com/n/1330000009717140)
 - [《The Go Programming Language》 Ch9 - 基于共享变量的并发](https://segmentfault.com/n/1330000009740994)
-
+- [《The Go Programming Language》 Ch12 - 反射](https://segmentfault.com/n/1330000009741041)
