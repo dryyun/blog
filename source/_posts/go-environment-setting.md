@@ -28,14 +28,17 @@ tags:
     - [gvm](/2018/11/28/how-to-use-gvm/)
 
 <!-- more --> 
-        
-## 环境变量设置
+
+## 环境变量
+
+### 环境变量设置
 - GOPATH
     - 很重要，go 的很多命令都是依赖 GOPATH 的，比如 `go install`，`go get`  
     - GO 1.8 开始，GOPATH 如果不设置，默认是 $HOME/go
     - Go 1.1 - 1.7 ，必须手动设置
     - <del>GO 1.1 之前，好像是同 GOROOT ，这不确定</del>
     - 支持多目录，使用 : 分割，go get 的内容会放入第一个目录下
+    - GO 1.11 开始，如果使用 `go modules` ，GOPATH 就不需要设置了 
     
 - GOBIN，生成可执行文件的目录
     - 推荐方式，设置 GOBIN 环境变量为 GOPATH/bin 
@@ -46,7 +49,18 @@ tags:
 - PATH
     - 需要把 GOBIN 路径加入 PATH 路径里，才能调用生成的命令文件    
 
-## GOPATH 目录设置
+### 环境变量介绍
+- GOROOT 
+    - 用来指定 Go 的安装目录
+    - GOROOT 的目录结构和 GOPATH 类似，因此存放 fmt 包的源代码对应目录应该为 $GOROOT/src/fmt 
+
+- GOOS 、GOARCH
+    - GOOS 环境变量用于指定目标操作系统（例如 android、linux、darwin 或 windows）
+    - GOARCH 环境变量用于指定处理器的类型，例如 amd64、386 或 arm 等
+    - 交叉编译需要用到，比如 `GOARCH="amd64"  GOOS="linux" go build`     
+
+
+## GOPATH 目录
 - src，源码文件目录，就是开发程序的目录，新建一个文件夹就代表开发一个项目
 - pkg，编译后的文件目录，一般是非 main 包生成的 .a 文件
 - bin，可执行文件目录，一般也就是 GOBIN 的路径
