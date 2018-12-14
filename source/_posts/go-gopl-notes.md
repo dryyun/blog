@@ -23,4 +23,6 @@ date: 2018-12-05 13:01:48
 - [《The Go Programming Language》 Ch7 - 接口 - 涉及接口记录](https://segmentfault.com/n/1330000009667150)
 - [《The Go Programming Language》 Ch8 - Goroutines 和 Channels](https://segmentfault.com/n/1330000009717140)
 - [《The Go Programming Language》 Ch9 - 基于共享变量的并发](https://segmentfault.com/n/1330000009740994)
+- [《The Go Programming Language》 Ch10 - 包和工具](https://segmentfault.com/n/1330000017367246)
+- [《The Go Programming Language》 Ch11 - 测试](https://segmentfault.com/n/1330000017376163)
 - [《The Go Programming Language》 Ch12 - 反射](https://segmentfault.com/n/1330000009741041)
