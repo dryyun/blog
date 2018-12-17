@@ -113,7 +113,8 @@ func (i *IntReceiver) Triple() (r int) {
 	i4.Double() // 指针 -》调用 receiver 是值的 method
 ```
 > - 不管你的 method 的 receiver 是指针类型还是非指针类型，都是可以通过指针 / 非指针类型进行调用的，编译器会帮你做类型转换。
-> - 对于接收器是指针的方法，通过值类型调用，其实是个语法糖，`编译器隐式的获取了它的地址` 
+> - 对于接收器是指针的方法，通过值类型调用，其实是个语法糖，`编译器隐式的获取了它的地址` ，前提是这个值能获取地址，不是临时变量
+> - 对于接收器是值的方法，传入指针类型，Go 会默认根据指针找到值，一种翻译说法是 `解引用` 
 
 ### 特别说明
 ```go
@@ -164,16 +165,19 @@ func (ts TestStruct) Double() int {
 	return r
 }
 
+// 定义在指针上的 method
 func (ts *TestStruct) Triple() int {
 	r := (*ts).X * 3
 	fmt.Println("*ts.Triple = ", r)
 	return r
 }
 
+// 定义接口
 func DoubleFun(d Doubler) {
 	d.Double()
 }
 
+// 定义接口
 func TripleFun(t Tripler) {
 	t.Triple()
 }
