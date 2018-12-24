@@ -74,8 +74,8 @@ social:
 
 # LeanCloud
 leancloud:
-  app_id:
-  app_key:
+  app_id: GC6UHYIAskhvi9XgJABlhbnF-gzGzoHsz
+  app_key: DrJBHcKo4hScmJj3WkYu0DcE
 
 # Baidu Analytics
 baidu_analytics: '6b510aaec78fd75edd74dcee21acf75e'
