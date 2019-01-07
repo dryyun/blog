@@ -10,6 +10,10 @@
     {{ __('footer.theme') }} - 
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
+  <span class="division">|</span>
+  <span id="busuanzi_container_site_pv">
+    Views - <span id="busuanzi_value_site_pv"></span>
+  </span>
 
   <span class="copyright-year">
     {% set current = date(Date.now(), "YYYY") %}
@@ -25,3 +29,6 @@
     <span class="author">{{ config.author }}</span>
   </span>
 </div>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
