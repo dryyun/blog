@@ -55,11 +55,11 @@ reward:
 # ===========================================
 social:
   email: dryyun@email.com
-  stack-overflow:
+  stack-overflow: https://segmentfault.com/u/dryyun
   twitter:
   facebook:
   linkedin:
-  google:
+  google:  
   github: https://github.com/dryyun
   weibo:
   zhihu:
