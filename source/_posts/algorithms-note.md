@@ -2,9 +2,9 @@
 title: 算法笔记 - 未入门
 date: 2018-08-24 17:10:32
 categories:
-- 技术
+- Algorithms
 tags:
-- algorithms
+- Algorithms
 - 算法
 - 啊哈!算法
 - 算法图解
