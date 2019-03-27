@@ -132,10 +132,12 @@ Commands:
 那么问题来了，我每次切换版本，都会改变 GOPATH ，这在开发中很蛋疼，你可以看出有三个命令，`linkthis`,`pkgset`,`pkgenv` 都是跟环境变量有关的。    
 
 对我而言，这些命令都不用，承接上文中[安装](#安装)，再在 `[[ -s "/Users/someone/.gvm/scripts/gvm" ]] && source "/Users/someone/.gvm/scripts/gvm"` 这句话后面增加相应的环境变量就可以覆盖了。    
-  
->GOPATH="xxxx"
->GOBIN="$GOPATH/bin"
->PATH=="$PATH:$GOBIN" 
+
+
+>
+>`GOPATH="$home/go"`  
+>`GOBIN="$GOPATH/bin"`  
+>`PATH="​$GOBIN:$PATH"`   
 
 
 ## 总结
