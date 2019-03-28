@@ -38,14 +38,14 @@ func main() {
 }
 
 ```
- 
+
 > 定义 method 并不局限于结构体 struct，可以任何 type 声明的类型定义 Method，最简单如 `type DInt int` ，就能为 DInt 类型定义 method  
 
 <!-- more --> 
 
 ### 方法值
 
-接上文代码例子，`i.Double` 叫作 "选择器"，选择器会返回一个 "方法值"-> 一个将方法 `IntReceiver.Double` 绑定到特定接收器变量的函数。这个函数可以不通过指定其接收器即可被调用，即调用时不需要指定接收器 。
+接上文代码例子，第 17 行，`i.Double` (注意没加括号)  叫作 "选择器"，选择器会返回一个 "方法值"-> 一个将方法 `IntReceiver.Double` 绑定到特定接收器变量的函数。这个函数可以不通过指定其接收器即可被调用，即调用时不需要指定接收器 。
 
 ```go
 	i := IntReceiver{4}
@@ -55,7 +55,7 @@ func main() {
 
 ### 方法表达式
 
-方法值，其实还是实现指定了接收器 ，`IntReceiverDouble := i.Double`，所以在调用的时候不需要指明。    
+方法值，其实还是指定了接收器的，在赋值的时候指定了 ，`IntReceiverDouble := i.Double`，所以在调用的时候不需要指明。    
 
 方法表达式，不需要指出具体的变量，针对的是类型。 
 当 T 是一个类型时，方法表达式可能会写作 `T.f` 或者 `(*T).f`，会返回一个函数 "值"，这种函数会将其第一个参数用作接收器，所以可以用通常的方式来对其进行调用。  
@@ -135,15 +135,16 @@ func (i *IntReceiver) Triple() (r int) {
 上文所述都是针对具体类型，具体类型完全适用。  
 但是对接口方法的调用，有点不同，具体规则如下
 
-- 类型 *T 的可调用方法集包含接受者为 *T 或 T 的所有方法集
-- 类型 T 的可调用方法集包含接受者为 T 的所有方法
-- 类型 T 的可调用方法集不包含接受者为 *T 的方法
+- 类型 `*T` 的可调用方法集包含接受者为 `*T` 或 `T` 的所有方法集
+- 类型 `T` 的可调用方法集包含接受者为 `T` 的所有方法
+- 类型 `T` 的可调用方法集`不包含`接受者为 `*T` 的方法
 
 ```go
 package main
 
 import "fmt"
 
+// 定义结构体
 type TestStruct struct {
 	X int
 }
@@ -172,12 +173,12 @@ func (ts *TestStruct) Triple() int {
 	return r
 }
 
-// 定义接口
+// 定义函数，参数是接口 Doubler
 func DoubleFun(d Doubler) {
 	d.Double()
 }
 
-// 定义接口
+// 定义函数，参数是接口 Tripler
 func TripleFun(t Tripler) {
 	t.Triple()
 }

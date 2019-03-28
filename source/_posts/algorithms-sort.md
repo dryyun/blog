@@ -150,12 +150,8 @@ function merge(left, right) {
             result.push(right.shift());
         }
     }
-    while (left.length) {
-        result.push(left.shift());
-    }
-    while (right.length) {
-        result.push(right.shift());
-    }
+    result = result.concat(left);
+    result = result.concat(right);
     return result
 }
 ```
@@ -170,7 +166,7 @@ function merge(left, right) {
 
 关键是构建堆，比如大顶堆，那么第一个元素就是最大值，然后把第一个元素和最后一个交换，把前面的 n-1 个元素，再次构建最大堆，如此循环。  
 
-通过数组构建堆，如果数组从 1 开始索引，数组中下标 i 的节点，左子节点 i * 2  ，右子节点 i * 2 +1 ，父节点 i /2   
+通过数组构建堆，如果数组从 1 开始索引，数组中下标 i 的节点，左子节点`i*2`  ，右子节点`i*2+1` ，父节点 `floor(i/2)`   
 
 时间复杂度 O(N log N)
 
