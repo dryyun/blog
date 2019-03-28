@@ -166,18 +166,21 @@ function merge(left, right) {
 
 关键是构建堆，比如大顶堆，那么第一个元素就是最大值，然后把第一个元素和最后一个交换，把前面的 n-1 个元素，再次构建最大堆，如此循环。  
 
-通过数组构建堆，如果数组从 1 开始索引，数组中下标 i 的节点，左子节点`i*2`  ，右子节点`i*2+1` ，父节点 `floor(i/2)`   
+通过数组构建堆，
+- 如果数组从 1 开始索引，数组中下标 i 的节点，左子节点`i*2`  ，右子节点`i*2+1` ，父节点 `floor(i/2)`   
+- 如果数组从 0 开始索引，数组中下标 i 的节点，左子节点`i*2+1`  ，右子节点`i*2+2` ，父节点 `floor((i-1)/2)`   
 
 时间复杂度 O(N log N)
 
 ```javascript
+// 构建大顶堆
 function buildMaxHeap(arr) {
     let len = arr.length;
     for (let i = Math.floor(len / 2); i >= 0; i--) {
         heapify(arr, len, i);
     }
 }
-
+// 堆化
 function heapify(arr, len, i) {
     let left = 2 * i + 1,
         right = 2 * i + 2,
@@ -193,11 +196,11 @@ function heapify(arr, len, i) {
 
     if (largest !== i) {
         [arr[i], arr[largest]] = [arr[largest], arr[i]];
-        heapify(arr, largest);
+        heapify(arr, len, largest);
     }
     return arr
 }
-
+// 堆排序，大顶堆，每次把第一个元素-最大的元素，交换到数组尾部，把前面的数组再一次堆化
 function heapSort(arr) {
     let len = arr.length;
     buildMaxHeap(arr);
