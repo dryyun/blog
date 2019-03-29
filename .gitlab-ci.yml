@@ -1,5 +1,0 @@
-deploy:
-  stage: deploy
-  script:
-  - ssh machine " cd ~/blog && sh hexo-deploy "
-
