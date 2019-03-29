@@ -1,12 +1,12 @@
-{% if theme.disqus_shortname %}
+{%- if theme.disqus_shortname -%}
   <script type="text/javascript">
     var disqus_config = function () {
         this.page.title = '{{ page.title }}';
-        {%if page.disqusUrl %}
+        {%- if page.disqusUrl -%}
             this.page.url = '{{config.url}}{{page.disqusUrl}}';
-        {% else %}
+        {%- else -%}
         this.page.url = '{{ page.permalink }}';
-        {% endif %}
+        {%- endif -%}
 
     };
     (function() {
@@ -18,4 +18,4 @@
     (d.head || d.body).appendChild(s);
     })();  
   </script>
-{% endif %}
+{%- endif -%}

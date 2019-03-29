@@ -39,6 +39,9 @@ fancybox: true
 
 pjax: true
 
+# LaTeX support (via MathJax)
+latex: false
+
 copyright:
   enable: true
   # https://creativecommons.org/
@@ -101,4 +104,4 @@ livere_datauid:
 # ===========================================
 # Version
 # ===========================================
-version: 2.10.1
+version: 2.11.0

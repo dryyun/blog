@@ -1,5 +1,5 @@
-{# Post Copyright #}
-{% if theme.copyright.enable and page.copyright !== false %}
+{#- Post Copyright -#}
+{%- if theme.copyright.enable and page.copyright !== false -%}
   <div class="post-copyright">
   <blockquote>
     <p class="copyright-item">
@@ -14,17 +14,17 @@
       <span>{{ __('copyright.date') + ': ' }}</span>
       {{ date(page.date, 'YYYY-MM-DD HH:mm') }}
     </p>
-    {% if page.modify_date %}
+    {%- if page.modify_date -%}
     <p class="copyright-item">
       <span>{{ __('copyright.modify_date') + ': ' }}</span>
       {{ date(page.modify_date, 'YYYY-MM-DD HH:mm') }}
     </p>
-    {% endif %}
+    {%- endif -%}
     <p class="copyright-item">
       <span>{{ __('copyright.license') + ': ' }}</span>
-      {% set license = page.license || theme.copyright.license %}
+      {%- set license = page.license || theme.copyright.license -%}
       {{ license }}
     </p>
   </blockquote>
   </div>
-{% endif %}
+{%- endif -%}
