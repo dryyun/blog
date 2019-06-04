@@ -38,14 +38,15 @@ tags:
     - Go 1.1 - 1.7 ，必须手动设置
     - <del>GO 1.1 之前，好像是同 GOROOT ，这不确定</del>
     - 支持多目录，使用 : 分割，go get 的内容会放入第一个目录下
-    - GO 1.11 开始，如果使用 `go modules` ，GOPATH 就不需要设置了 
-    
+    - GO 1.11 开始，如果使用 `go modules` ，项目 pkg 就不在依赖 GOPATH/src 了，全局 pkg 还是会使用 GOPATH/src
+    - 应该说 Go 团队一直在寻找"去GOPATH" 方案，比如 go 1.5 推出的 vendor 和 go 1.11 推出的 go modules
+
 - GOBIN，生成可执行文件的目录
     - 推荐方式，设置 GOBIN 环境变量为 GOPATH/bin 
     - 如果不设置，默认就是 GOPATH/bin
     - 单独设置成其他的目录，可执行文件会生成在相应的文件夹下面
     - 使用 GoLand 的终端，会默认把 GOPATH/bin 加入 PATH ，不管 GOBIN 设置了什么值
-    
+
 - PATH
     - 需要把 GOBIN 路径加入 PATH 路径里，才能调用生成的命令文件    
 
