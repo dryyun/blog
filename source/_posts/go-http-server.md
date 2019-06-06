@@ -40,6 +40,8 @@ type Handler interface {
 ```
 Handler 是一个接口定义，只要实现了 ServeHTTP(ResponseWriter, *Request) 方法的类型，都可以
 
+<!-- more --> 
+
 ## http.ListenAndServe  执行流程
 
 查看源码 net/http server.go  可以发现执行流程
@@ -205,8 +207,6 @@ http.ListenAndServe("***", r)
 ## 总结 
 
 这次，终于理清了 http server 的处理流程了 。
-
-
 
 
 
