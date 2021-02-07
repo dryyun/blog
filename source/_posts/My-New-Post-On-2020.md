@@ -1,9 +1,10 @@
 ---
-title: My New Post On 2020
+title: My New Article In 2020
 categories:
-  - 技术
+  - 杂谈
 date: 2020-11-20 23:46:04
-tags:
+tags:	
+  - 杂谈
 ---
 
 许久未更新了。
