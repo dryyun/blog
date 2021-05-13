@@ -2,6 +2,7 @@
 title: 最近折腾两三事
 categories:
   - 技术
+  - 杂谈
 date: 2019-01-16 13:45:46
 tags:
   - Shadowsocks
